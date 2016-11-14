@@ -1,4 +1,4 @@
-var VueListeConcerts = function(){
+var VueListeConcerts = function(liste_concerts){
 	 
 	 this.afficher = function(){
 		var page_liste_concerts = VueListeConcerts.html;
@@ -7,8 +7,8 @@ var VueListeConcerts = function(){
 		var htmlEnConstruction = "";
 		
 		for(var no_concert in liste_concerts) {
-			htmlEnConstruction += VueListeConcerts.html_item.replace("{ID}", liste_cadeaux[no_cadeau].id)
-															.replace("{ARTISTE}", liste_cadeaux[no_cadeau].artiste);
+			htmlEnConstruction += VueListeConcerts.html_item.replace("{ID}", liste_concerts[no_concert].id)
+															.replace("{ARTISTE}", liste_concerts[no_concert].artiste);
 		}
 		
 		html_liste_concerts.html(htmlEnConstruction);
