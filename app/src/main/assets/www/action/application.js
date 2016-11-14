@@ -17,6 +17,13 @@ var applicationListeConcerts = {
 			this.vueListeConcerts = new VueListeConcerts(this.liste_concerts);
 			this.vueListeConcerts.afficher();
 		}
+		else{
+			var trouvailles = ancre.match(/^#concert\/([0-9]+)/);
+			var id_concert = trouvailles[1];
+			var concert = this.concertDAO.trouverCadeauParId(id_concert);
+			this.vueDetailsConcert = new VueDetailsConcert(concert);
+			this.vueDetailsConcert.afficher();
+		}
 		
 	}
 };

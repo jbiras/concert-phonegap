@@ -11,7 +11,7 @@
  	Il y a une erreur dans le programme
     
 	<script type="html/text" id="page-liste-concerts">
-		<h1>Liste des concerts au Cégep de Matane</h1>
+		<h1>Liste des concerts</h1>
 		<ul id="liste-concerts"></ul>
 	</script>
 	
@@ -19,6 +19,13 @@
 		<li>
 			<a href='#concert/{ID}'>{ARTISTE}</a>
 		</li>
+	</script>
+	
+	<script type="text/html" id="page-concert" > 
+		<h1 id="concert-artiste">{ARTISTE}</h1>
+		<h2 id="cadeau-lieu">{LIEU}</h2>
+		<p id="cadeau-date">{DATE}</p>
+		<a href="#">Retour a l'écran principal</a>
 	</script>
     
     <script src="donnees/ConcertDAO.js"></script> 
