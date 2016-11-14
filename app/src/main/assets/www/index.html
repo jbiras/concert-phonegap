@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
  <head>
+  <meta charset="UTF-8">
   <title>Liste des concerts</title>
   <style type="text/css">
   </style>
@@ -10,8 +11,14 @@
  	Il y a une erreur dans le programme
     
 	<script type="html/text" id="page-liste-concerts">
-		<h1>Liste des concerts</h1>
+		<h1>Liste des concerts au Cégep de Matane</h1>
 		<ul id="liste-concerts"></ul>
+	</script>
+	
+	<script type="text/html" id="item-liste-concerts">
+		<li>
+			<a href='#concert/{ID}'>{ARTISTE}</a>
+		</li>
 	</script>
     
     <script src="donnees/ConcertDAO.js"></script> 
