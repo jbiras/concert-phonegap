@@ -17,6 +17,11 @@ var applicationListeConcerts = {
 			this.vueListeConcerts = new VueListeConcerts(this.liste_concerts);
 			this.vueListeConcerts.afficher();
 		}
+		else if(ancre.match(/^#ajouter-concert/)){
+			
+			this.vueAjouterConcert = new VueAjouterConcert();
+			this.vueAjouterConcert.afficher();
+		}
 		else{
 			var trouvailles = ancre.match(/^#concert\/([0-9]+)/);
 			var id_concert = trouvailles[1];

@@ -13,6 +13,7 @@
 	<script type="html/text" id="page-liste-concerts">
 		<h1>Liste des concerts</h1>
 		<ul id="liste-concerts"></ul>
+		<a href="#ajouter-concert">Ajouter un concert</a>
 	</script>
 	
 	<script type="text/html" id="item-liste-concerts">
@@ -27,9 +28,22 @@
 		<p id="cadeau-date">{DATE}</p>
 		<a href="#">Retour a l'écran principal</a>
 	</script>
+	
+	<script type="text/html" id="page-ajouter-concert"> 
+		<form id="formulaire-ajouter">
+			<label for="concert-artiste">Artiste : </label><input type="text" id="concert-artiste"/>
+			<label for="concert-lieu">Lieu : </label><input type="text" id="concert-lieu"/>
+			<label for="concert-date">Date : </label><textarea id="concert-date"></textarea>
+			<input type="submit" value="Ajouter"/>
+		</form>
+		<a href="#">Retour a la liste</a>
+	</script>
+	
+	
     
     <script src="donnees/ConcertDAO.js"></script> 
     <script src="vue/VueListeConcerts.js"></script> 
+    <script src="vue/VueAjouterConcert.js"></script> 
     <script src="vue/VueDetailsConcert.js"></script> 
     <script src="action/application.js"></script> 
  </body>
