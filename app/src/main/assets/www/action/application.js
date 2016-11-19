@@ -22,6 +22,14 @@ var applicationListeConcerts = {
 			this.vueAjouterConcert = new VueAjouterConcert();
 			this.vueAjouterConcert.afficher($.proxy(this.sauvegarderNouveauConcert, this));
 		}
+		else if(ancre.match(/^#modifier\/([0-9]+)/)){
+			var trouvailles = ancre.match(/^#modifier\/([0-9]+)/);
+			var id_concert = trouvailles[1];
+			var concert = this.concertDAO.trouverCadeauParId(id_concert);
+			this.vueModifierConcert = new VueModifierConcert(concert);
+			this.vueModifierConcert.afficher(concert, null);
+			
+		}
 		else{
 			var trouvailles = ancre.match(/^#concert\/([0-9]+)/);
 			var id_concert = trouvailles[1];
@@ -34,6 +42,11 @@ var applicationListeConcerts = {
 	
 	sauvegarderNouveauConcert:function(concert){
 		this.concertDAO.ajouterConcert(concert);
+	},
+	
+	modifierUnConcert:function(concert){
+		
+		
 	}
 };
 

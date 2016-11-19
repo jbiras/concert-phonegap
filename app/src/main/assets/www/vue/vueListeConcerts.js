@@ -8,7 +8,8 @@ var VueListeConcerts = function(liste_concerts){
 		
 		for(var no_concert in liste_concerts) {
 			htmlEnConstruction += VueListeConcerts.html_item.replace("{ID}", liste_concerts[no_concert].id)
-															.replace("{ARTISTE}", liste_concerts[no_concert].artiste);
+															.replace("{ARTISTE}", liste_concerts[no_concert].artiste)
+															.replace("{IDM}", liste_concerts[no_concert].id);
 		}
 		
 		html_liste_concerts.html(htmlEnConstruction);

@@ -18,7 +18,7 @@
 	
 	<script type="text/html" id="item-liste-concerts">
 		<li>
-			<a href='#concert/{ID}'>{ARTISTE}</a>
+			<a href='#concert/{ID}'>{ARTISTE}</a>&nbsp;<a href='#modifier/{IDM}'>Modifier</a>
 		</li>
 	</script>
 	
@@ -39,12 +39,23 @@
 		<a href="#">Retour a la liste</a>
 	</script>
 	
+	<script type="text/html" id="page-modifier-concert"> 
+		<form id="formulaire-modifier">
+			<label for="concert-artiste">Artiste : </label><input type="text" id="concert-artiste"/>
+			<label for="concert-lieu">Lieu : </label><input type="text" id="concert-lieu"/>
+			<label for="concert-date">Date : </label><textarea id="concert-date"></textarea>
+			<input type="submit" value="Modifier"/>
+		</form>
+		<a href="#">Retour a la liste</a>
+	</script>
+	
 	
     
     <script src="modele/Concert.js"></script> 
     <script src="donnees/ConcertDAO.js"></script> 
     <script src="vue/VueListeConcerts.js"></script> 
     <script src="vue/VueAjouterConcert.js"></script> 
+    <script src="vue/VueModifierConcert.js"></script> 
     <script src="vue/VueDetailsConcert.js"></script> 
     <script src="action/application.js"></script> 
  </body>
