@@ -27,7 +27,7 @@ var applicationListeConcerts = {
 			var id_concert = trouvailles[1];
 			var concert = this.concertDAO.trouverCadeauParId(id_concert);
 			this.vueModifierConcert = new VueModifierConcert(concert);
-			this.vueModifierConcert.afficher(concert, null);
+			this.vueModifierConcert.afficher(concert, $.proxy(this.modifierUnConcert, this));
 			
 		}
 		else{
@@ -45,8 +45,7 @@ var applicationListeConcerts = {
 	},
 	
 	modifierUnConcert:function(concert){
-		
-		
+		this.concertDAO.modifierConcert(concert);
 	}
 };
 

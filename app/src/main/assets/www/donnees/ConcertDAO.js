@@ -25,4 +25,18 @@ var ConcertDAO = function(){
 			 "lieu":concert.lieu,
 			 "date":concert.date};
 	}
+	
+	this.modifierConcert = function(concert){
+		alert(concert.id);
+		alert(concert.artiste);
+		var index = (concert.id) - 1;
+		alert(index);
+		this.liste_concerts[index] =
+		{"id":concert.id,
+		"artiste":concert.artiste,
+		"lieu":concert.lieu,
+		"date":concert.date
+		};
+		
+	}
 };

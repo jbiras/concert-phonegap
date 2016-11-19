@@ -1,10 +1,18 @@
-var VueModifierConcert = function(concert){
-	this.afficher = function(concert, actionAjouterConcert){
+var VueModifierConcert = function(){
+	this.afficher = function(concert, actionModifierConcert){
 		$("body").html(VueModifierConcert.html);
+		
+		$("#concert-artiste").val(concert.artiste);
+		
+		$("#concert-lieu").val(concert.lieu);
+		
+		$("#concert-date").val(concert.date);
 		
 		$("#formulaire-modifier").on("submit", $.proxy(this.modifierConcert, this));
 		
 		this.actionModifierConcert = actionModifierConcert;		
+		
+		this.concert = concert;
 	}
 	
 	this.modifierConcert = function(){
@@ -15,7 +23,7 @@ var VueModifierConcert = function(concert){
 		
 		var date = $("#concert-date").val();
 		
-		var concert = new Concert(id = null, artiste, lieu, date);
+		var concert = new Concert(id = this.concert.id, artiste, lieu, date);
 		
 		this.actionModifierConcert(concert);
 		
