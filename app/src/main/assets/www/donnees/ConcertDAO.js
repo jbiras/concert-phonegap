@@ -17,4 +17,12 @@ var ConcertDAO = function(){
 			
 		}
 	}
+	
+	this.ajouterConcert = function(concert){
+		this.liste_concerts[this.liste_concerts.length] = 
+			{"id":this.liste_concerts.length+1,
+			 "artiste":concert.artiste,
+			 "lieu":concert.lieu,
+			 "date":concert.date};
+	}
 };

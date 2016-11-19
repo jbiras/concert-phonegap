@@ -20,7 +20,7 @@ var applicationListeConcerts = {
 		else if(ancre.match(/^#ajouter-concert/)){
 			
 			this.vueAjouterConcert = new VueAjouterConcert();
-			this.vueAjouterConcert.afficher();
+			this.vueAjouterConcert.afficher($.proxy(this.sauvegarderNouveauConcert, this));
 		}
 		else{
 			var trouvailles = ancre.match(/^#concert\/([0-9]+)/);
@@ -30,6 +30,10 @@ var applicationListeConcerts = {
 			this.vueDetailsConcert.afficher();
 		}
 		
+	},
+	
+	sauvegarderNouveauConcert:function(concert){
+		this.concertDAO.ajouterConcert(concert);
 	}
 };
 
