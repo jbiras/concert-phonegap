@@ -1,21 +1,28 @@
 var applicationListeConcerts = {
 	
 	lancer:function(){
-		this.concertDAO = new ConcertDAO();
-		this.liste_concerts = this.concertDAO.listerTousLesConcerts();
 		
 		$(window).on('hashchange', $.proxy(this.naviguer, this));
 		
-		this.naviguer();
+		if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)){
+			$(document).on("deviceready", null, $.proxy(this.initialiserPourDonnees,this), false);
+		}else{
+			this.initialiserPourDonnees();
+		}
 		
+			
+	},
+	
+	initialiserPourDonnees:function(){
+		this.concertDAO = new ConcertDAO();
+		this.naviguer();
 	},
 	
 	naviguer:function(){
 		var ancre = window.location.hash;
 		
 		if(!ancre){
-			this.vueListeConcerts = new VueListeConcerts(this.liste_concerts);
-			this.vueListeConcerts.afficher();
+			this.concertDAO.listerTousLesConcerts($.proxy(this.afficherLesConcerts, this));
 		}
 		else if(ancre.match(/^#ajouter-concert/)){
 			
@@ -38,6 +45,11 @@ var applicationListeConcerts = {
 			this.vueDetailsConcert.afficher();
 		}
 		
+	},
+	
+	afficherLesConcerts:function(liste_concerts){
+		this.vueListeConcerts = new VueListeConcerts(liste_concerts);
+		this.vueListeConcerts.afficher();
 	},
 	
 	sauvegarderNouveauConcert:function(concert){
