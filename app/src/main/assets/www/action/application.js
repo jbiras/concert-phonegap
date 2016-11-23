@@ -5,7 +5,7 @@ var applicationListeConcerts = {
 		$(window).on('hashchange', $.proxy(this.naviguer, this));
 		
 		if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)){
-			$(document).on("deviceready", null, $.proxy(this.initialiserPourDonnees,this), false);
+			$(document).on("deviceready", $.proxy(this.initialiserPourDonnees(),this));
 		}else{
 			this.initialiserPourDonnees();
 		}
