@@ -1,0 +1,50 @@
+body{
+	background-color: #ffffcc;
+}
+
+.titre-principal{
+	text-align: center;
+}
+
+.item-liste-concerts{
+	display: block;
+	padding-bottom: 0.2em;
+	
+}
+
+.item-liste-concerts a, .ajouter-concert, .retour-liste{
+	color:#ffffff;
+	background-color: #009de0;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:normal;
+	text-decoration : none;
+	display: inline-block;
+	
+	border-top-left-radius:0.4em;
+	
+	border-top-right-radius:0.4em;
+	
+	border-bottom-right-radius:0.4em;
+	
+	border-bottom-left-radius:0.4em;
+	text-indent:0;
+	text-align: center;
+	border:1px solid #000000;
+}
+
+.lien-item-liste-concerts{
+	width: 80%;
+}
+
+.modifier-concert{
+	width: 19%;
+}
+
+.item-liste-concerts a:hover, .ajouter-concert:hover, .retour-liste:hover{
+	background-color:#1abaff;
+}
+
+.formulaire{
+	margin: 0.2em;
+}
